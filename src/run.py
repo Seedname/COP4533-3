@@ -8,7 +8,7 @@ def hvlcs_complete(character_map: dict[str, int], A: str, B: str) -> tuple[str, 
     dp: list[list[int]] = hvlcs(character_map, A, B)
 
     # get the hvlcs string
-    result: str = backtrack(dp, A)
+    result: str = backtrack(dp, A, B, character_map)
 
     # get the value of the string
     value: int = dp[len(A)][len(B)]

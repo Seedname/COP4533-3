@@ -86,7 +86,7 @@ if __name__ == "__main__":
             "alphabet_size": alphabet_size,
             "string_lengths": string_lengths,
             "runtimes": runtimes
-        }, f)
+        }, f, indent=2)
 
 
     # graph the runtimes
