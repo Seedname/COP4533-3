@@ -90,7 +90,7 @@ if __name__ == "__main__":
 
 
     # graph the runtimes
-    plt.plot(string_lengths, runtimes)
+    plt.plot(string_lengths, runtimes, marker='o')
     plt.xlabel("String Length")
     plt.ylabel("Completion Time (ns)")
     plt.title("String Length vs. DP Completion Time")
