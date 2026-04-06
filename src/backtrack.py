@@ -1,7 +1,8 @@
 from parse import read_input
 from hvlcs import hvlcs
 
-def backtrack(dp) -> str:
+
+def backtrack(dp, A) -> str:
     i = len(dp) - 1
     j = len(dp[0]) - 1
     res = []
@@ -28,6 +29,6 @@ if __name__ == "__main__":
     dp = hvlcs(character_map, A, B)
 
     # get the hvlcs string
-    res = backtrack(dp)
+    res = backtrack(dp, A)
 
     print(res)
