@@ -45,7 +45,7 @@ The first line contains the number of letters to be used in the alphabet, K.
 The next K lines contain each letter with its corresponding value, separated by a space.  
 The last two lines contain the strings A and B, which are the inputs to the algorithm and must contain letters defined in the previous K lines.  
 
-Output files contain the value of the highest value longest common subsequence on the first line, and the subsequence on the second line. For example, `outputs/file2.out`:
+Output files contain the value of the highest value longest common subsequence on the first line, and the subsequence on the second line. For example, `outputs/file1.out`:
 
 ```
 9
@@ -68,6 +68,17 @@ This figure suggests a quadratic trend, and fitting it to a quadratic polynomial
 
 ### Question 2: Recurrence Equation
 
+The recurrence equation used to calculate the dynamic programming solution is as follows:
+
+![Recurrence Equation](data/recurrence-equation.png)
+
+OPT(i, j) is the value of the highest value longest common subsequence for the string prefixes A<sub>1</sub>A<sub>2</sub>...A<sub>i</sub> and B<sub>1</sub>B<sub>2</sub>...B<sub>j</sub>. I have defined our base case as when i or j is 0, as when one of the strings is empty, the HVLCS must have length 0 and therefore value 0. 
+
+The first case describes when the current two characters being compared between A and B are equal. In this case, our first option is to take the current character and add its value to OPT(i-1, j-1), which is the optimal HVLCS if the current character was not present in either string. Our next two options occur when we do not take the current character, and they are to either skip A<sub>i</sub> or skip B<sub>j</sub>. We will take the option that gives us the maximum value.
+
+The second case occurs when A<sub>i</sub> != B<sub>j</sub>. In this case, we do not have the option to take the current character's value, so we must choose between just the second two options: skipping A<sub>i</sub> or B<sub>j</sub>. We will again take the maximum of these two options.
+
+The answer to the question can be found through accessing OPT(n, m), where n is the length of A and m is the length of B.
 
 ### Question 3: Big-Oh
 
