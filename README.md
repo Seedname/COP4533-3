@@ -57,7 +57,7 @@ cb
 
 ### Question 1: Empirical Comparison
 
-In `src/graph.py`, 20 string lengths ranging from 25 to 1925 characters, evenly spaced by 100 characters, with a constant alphabet size of 26 were analyzed for completion time with 10 samples each. The resulting plot is shown below
+In `src/graph.py`, 20 string lengths (where `length(A) = length(B) = n`) ranging from 25 to 1925 characters, evenly spaced by 100 characters, with a constant alphabet size of 26 were analyzed for completion time with 10 samples each. This plot was generated with 200 input files that were randomly generated and not saved to the disk and is shown below.
 
 ![Graph](data/graph.png)
 
